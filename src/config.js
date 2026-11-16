@@ -3,8 +3,8 @@
 export const CONFIG = {
   // Supabase > Project Settings > API. A chave "anon public" pode ficar no site: quem
   // protege os dados são as regras (RLS) do arquivo sql/schema.sql.
-  supabaseUrl: '',
-  supabaseChaveAnon: '',
+  supabaseUrl: 'https://zytqysvducqnscffivla.supabase.co',
+  supabaseChaveAnon: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5dHF5c3ZkdWNxbnNjZmZpdmxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ3OTAyNzMsImV4cCI6MjExMDM2NjI3M30.Pexi5DCUQzJbIV3RTZVeMj3RGjlbEOs4ezTGxYSvcK4',
 
   // Trilha seguinte libera quando esta fração dos desafios da anterior estiver concluída.
   percentualParaDesbloquear: 0.6,
@@ -18,5 +18,5 @@ export const CONFIG = {
     meega: '',
   },
 
-  contato: 'e-mail de contato da dupla (preencher)',
+  contato: 'frederico.spiguel@gmail.com',
 };
