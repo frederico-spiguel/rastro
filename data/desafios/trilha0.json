@@ -1,0 +1,30 @@
+{
+  "trilha": 0,
+  "nome": "Tutorial",
+  "descricao": "Desafio de demonstração com explicações a cada passo.",
+  "objetivos": ["Aprender a preencher o teste de mesa no jogo"],
+  "desafios": [
+    {
+      "id": "t0-01",
+      "titulo": "Como jogar",
+      "conceito": "tutorial",
+      "dificuldade": 1,
+      "tutorial": true,
+      "codigo": [
+        "x = {X}",
+        "y = x + 2",
+        "if y > 5:",
+        "    x = 0",
+        "print(x, y)"
+      ],
+      "parametros": {
+        "X": { "tipo": "int", "min": 1, "max": 9 }
+      },
+      "dicas": [
+        "Use os valores que já estão na tabela, da linha de cima.",
+        "Se travar, este botão mostra a resposta do passo. No jogo de verdade, isso conta como ajuda."
+      ],
+      "explicacao": "Pronto! É assim em todos os desafios: um passo por linha executada, sempre com os valores depois da linha."
+    }
+  ]
+}

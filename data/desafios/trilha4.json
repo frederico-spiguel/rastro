@@ -1,0 +1,79 @@
+{
+  "trilha": 4,
+  "nome": "Vetores",
+  "descricao": "Listas: índices, percurso e busca simples.",
+  "objetivos": [
+    "Acessar elementos de uma lista pelo índice, começando em 0",
+    "Acompanhar uma lista sendo percorrida por um laço",
+    "Prever o resultado de buscas simples"
+  ],
+  "desafios": [
+    {
+      "id": "t4-01",
+      "titulo": "Somando a lista",
+      "conceito": "percurso",
+      "dificuldade": 1,
+      "codigo": [
+        "v = {V}",
+        "soma = 0",
+        "for x in v:",
+        "    soma = soma + x",
+        "print(soma)"
+      ],
+      "parametros": {
+        "V": { "tipo": "lista", "tamanho": [3, 4], "min": 1, "max": 9 }
+      },
+      "dicas": [
+        "'for x in v' faz x receber cada elemento da lista, do primeiro ao último.",
+        "Na primeira volta, x é v[0]; na segunda, v[1]; e assim por diante.",
+        "soma acumula os valores um de cada vez."
+      ],
+      "explicacao": "Percorrer uma lista com for visita cada elemento, na ordem."
+    },
+    {
+      "id": "t4-02",
+      "titulo": "O maior elemento",
+      "conceito": "busca",
+      "dificuldade": 2,
+      "codigo": [
+        "v = {V}",
+        "maior = v[0]",
+        "for i in range(1, len(v)):",
+        "    if v[i] > maior:",
+        "        maior = v[i]",
+        "print(maior)"
+      ],
+      "parametros": {
+        "V": { "tipo": "lista", "tamanho": [4, 5], "min": 1, "max": 30, "distintos": true }
+      },
+      "dicas": [
+        "O primeiro índice de uma lista é 0. len(v) é o número de elementos.",
+        "O laço começa no índice 1 porque v[0] já foi usado como palpite inicial.",
+        "maior só muda quando aparece um valor maior do que ele."
+      ],
+      "explicacao": "A busca do maior guarda o melhor valor visto até agora e o troca quando encontra um maior."
+    },
+    {
+      "id": "t4-03",
+      "titulo": "Mudando posições",
+      "conceito": "índices",
+      "dificuldade": 2,
+      "codigo": [
+        "v = {V}",
+        "v[0] = v[1] + v[2]",
+        "v[-1] = v[0] * 2",
+        "n = len(v)",
+        "print(v)"
+      ],
+      "parametros": {
+        "V": { "tipo": "lista", "tamanho": [3, 4], "min": 0, "max": 9 }
+      },
+      "dicas": [
+        "v[0] é o primeiro elemento; v[-1] é o último.",
+        "Mudar v[0] na linha 2 afeta o cálculo da linha 3.",
+        "len(v) conta os elementos; mudar valores não muda o tamanho da lista."
+      ],
+      "explicacao": "Índices negativos contam do fim: v[-1] é o último elemento."
+    }
+  ]
+}

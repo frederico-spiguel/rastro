@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+Thumbs.db
+__pycache__/
+
+# Materiais e dados do piloto: NÃO publicar (o repositório e o site são públicos).
+# Depois do piloto, as questões podem ser adicionadas ao repositório para o relatório.
+pesquisa/testes.json
+pesquisa/forma-*.md
+pesquisa/gabarito.md
+pesquisa/notas.csv
+pesquisa/resultados.md
+pesquisa/dados/
+*.xlsx
+
+# Configuração local do editor/assistente
+.claude/

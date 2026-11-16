@@ -1,0 +1,217 @@
+{
+  "trilha": 2,
+  "nome": "Decisão",
+  "descricao": "if, elif, else e operadores lógicos: o programa escolhe qual caminho seguir.",
+  "objetivos": [
+    "Avaliar uma condição como verdadeira (True) ou falsa (False)",
+    "Identificar quais linhas são executadas e quais são puladas",
+    "Combinar condições com and, or e not"
+  ],
+  "desafios": [
+    {
+      "id": "t2-01",
+      "titulo": "O maior de dois",
+      "conceito": "if/else",
+      "dificuldade": 1,
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "if a > b:",
+        "    maior = a",
+        "else:",
+        "    maior = b",
+        "print(maior)"
+      ],
+      "parametros": {
+        "A": { "tipo": "int", "min": 1, "max": 30 },
+        "B": { "tipo": "int", "min": 1, "max": 30 }
+      },
+      "condicao": "A != B",
+      "dicas": [
+        "Primeiro descubra se a condição do if é verdadeira ou falsa.",
+        "Só um dos dois blocos é executado: o do if (condição verdadeira) ou o do else.",
+        "A linha 'else:' não executa nada sozinha; ela só marca onde começa o outro caminho."
+      ],
+      "explicacao": "O if escolhe um caminho: quando a condição é falsa, o bloco do if é pulado e o do else é executado."
+    },
+    {
+      "id": "t2-02",
+      "titulo": "Par ou ímpar",
+      "conceito": "if/else",
+      "dificuldade": 1,
+      "codigo": [
+        "n = {N}",
+        "if n % 2 == 0:",
+        "    tipo = \"par\"",
+        "else:",
+        "    tipo = \"ímpar\"",
+        "print(n, tipo)"
+      ],
+      "parametros": {
+        "N": { "tipo": "int", "min": 1, "max": 99 }
+      },
+      "dicas": [
+        "Calcule primeiro n % 2 (o resto da divisão por 2).",
+        "Números pares têm resto 0 na divisão por 2.",
+        "Compare o resto com 0 para saber se a condição é True ou False."
+      ],
+      "explicacao": "n % 2 == 0 é um teste clássico de paridade: o resto é 0 para pares e 1 para ímpares."
+    },
+    {
+      "id": "t2-03",
+      "titulo": "Situação do aluno",
+      "conceito": "elif",
+      "dificuldade": 2,
+      "codigo": [
+        "nota = {NOTA}",
+        "if nota >= 7:",
+        "    situacao = \"aprovado\"",
+        "elif nota >= 4:",
+        "    situacao = \"recuperação\"",
+        "else:",
+        "    situacao = \"reprovado\"",
+        "print(situacao)"
+      ],
+      "parametros": {
+        "NOTA": { "tipo": "int", "min": 0, "max": 10 }
+      },
+      "dicas": [
+        "As condições são testadas de cima para baixo, uma de cada vez.",
+        "O elif só é testado se a condição do if foi falsa.",
+        "Assim que uma condição é verdadeira, as próximas nem são testadas."
+      ],
+      "explicacao": "Em uma cadeia if/elif/else, só o primeiro ramo com condição verdadeira é executado."
+    },
+    {
+      "id": "t2-04",
+      "titulo": "Bônus opcional",
+      "conceito": "if sem else",
+      "dificuldade": 1,
+      "codigo": [
+        "x = {X}",
+        "bonus = 0",
+        "if x > 10:",
+        "    bonus = 5",
+        "x = x + bonus",
+        "print(x)"
+      ],
+      "parametros": {
+        "X": { "tipo": "int", "min": 5, "max": 15 }
+      },
+      "condicao": "X != 10",
+      "dicas": [
+        "Um if sem else pode simplesmente não fazer nada.",
+        "Se a condição for falsa, o programa pula direto para a linha 5.",
+        "A linha 5 é executada sempre, porque não está dentro do if."
+      ],
+      "explicacao": "As linhas fora do bloco indentado são executadas de qualquer jeito, depois do if."
+    },
+    {
+      "id": "t2-05",
+      "titulo": "Pode entrar?",
+      "conceito": "and",
+      "dificuldade": 2,
+      "codigo": [
+        "idade = {I}",
+        "tem_ingresso = {T}",
+        "pode_entrar = idade >= 18 and tem_ingresso",
+        "if pode_entrar:",
+        "    msg = \"pode entrar\"",
+        "else:",
+        "    msg = \"não pode entrar\"",
+        "print(msg)"
+      ],
+      "parametros": {
+        "I": { "tipo": "int", "min": 14, "max": 25 },
+        "T": { "tipo": "escolha", "opcoes": [true, false] }
+      },
+      "dicas": [
+        "Uma comparação como idade >= 18 vale True ou False.",
+        "'and' só dá True quando os dois lados são True.",
+        "Calcule os dois lados separadamente e depois combine com 'and'."
+      ],
+      "explicacao": "Com 'and', basta um lado ser False para o resultado ser False."
+    },
+    {
+      "id": "t2-06",
+      "titulo": "Fim de semana",
+      "conceito": "or e not",
+      "dificuldade": 2,
+      "codigo": [
+        "dia = {D}",
+        "fim_de_semana = dia == 6 or dia == 7",
+        "if not fim_de_semana:",
+        "    acordar = 6",
+        "else:",
+        "    acordar = 9",
+        "print(acordar)"
+      ],
+      "parametros": {
+        "D": { "tipo": "int", "min": 1, "max": 7 }
+      },
+      "dicas": [
+        "'or' dá True quando pelo menos um dos lados é True.",
+        "'not' inverte o valor: not True é False e not False é True.",
+        "Descubra o valor de fim_de_semana primeiro e depois aplique o 'not'."
+      ],
+      "explicacao": "'or' precisa de apenas um lado verdadeiro; 'not' inverte o resultado da condição."
+    },
+    {
+      "id": "t2-07",
+      "titulo": "Vários ifs seguidos",
+      "conceito": "ifs independentes",
+      "dificuldade": 3,
+      "codigo": [
+        "x = {X}",
+        "y = 0",
+        "if x > 5:",
+        "    y = y + 1",
+        "if x > 10:",
+        "    y = y + 10",
+        "if x > 15:",
+        "    y = y + 100",
+        "print(y)"
+      ],
+      "parametros": {
+        "X": { "tipo": "int", "min": 1, "max": 20 }
+      },
+      "dicas": [
+        "Aqui não há elif: cada if é testado, independentemente dos outros.",
+        "Mais de um bloco pode ser executado.",
+        "Teste as três condições, uma de cada vez, sempre com o mesmo valor de x."
+      ],
+      "explicacao": "Ifs separados são todos testados; já em if/elif, no máximo um ramo é executado."
+    },
+    {
+      "id": "t2-08",
+      "titulo": "Quadrantes",
+      "conceito": "if aninhado",
+      "dificuldade": 3,
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "if a > 0:",
+        "    if b > 0:",
+        "        quadrante = 1",
+        "    else:",
+        "        quadrante = 4",
+        "else:",
+        "    if b > 0:",
+        "        quadrante = 2",
+        "    else:",
+        "        quadrante = 3"
+      ],
+      "parametros": {
+        "A": { "tipo": "int", "min": -9, "max": 9 },
+        "B": { "tipo": "int", "min": -9, "max": 9 }
+      },
+      "condicao": "A != 0 and B != 0",
+      "dicas": [
+        "Comece pelo if de fora: ele decide qual metade do código será executada.",
+        "Depois, dentro da metade escolhida, teste o if de dentro.",
+        "A indentação mostra a qual if cada else pertence."
+      ],
+      "explicacao": "Um if dentro de outro só é testado quando o if de fora levou até ele."
+    }
+  ]
+}

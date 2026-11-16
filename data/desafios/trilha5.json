@@ -1,0 +1,171 @@
+{
+  "trilha": 5,
+  "nome": "Caça ao bug",
+  "descricao": "O programa dá a saída errada. Rastreie o código e encontre a linha com defeito.",
+  "liberaCom": 3,
+  "objetivos": [
+    "Comparar a execução real com a esperada para localizar onde o estado diverge",
+    "Reconhecer erros comuns: limite de laço, precedência, inicialização e atualização de variáveis"
+  ],
+  "desafios": [
+    {
+      "id": "t5-01",
+      "modo": "bug",
+      "titulo": "A soma que para cedo",
+      "conceito": "limite do laço",
+      "dificuldade": 1,
+      "objetivo": "Somar todos os números de 1 até n (incluindo o n).",
+      "codigo": [
+        "n = {N}",
+        "soma = 0",
+        "i = 1",
+        "while i < n:",
+        "    soma = soma + i",
+        "    i = i + 1",
+        "print(soma)"
+      ],
+      "linhaBug": 4,
+      "correcao": "while i <= n:",
+      "parametros": { "N": { "tipo": "int", "min": 3, "max": 6 } },
+      "dicas": [
+        "Rastreie o laço e anote os valores de i que entram na soma.",
+        "O último valor de i somado é o próprio n?",
+        "Olhe a condição do while: com < o laço para um passo antes."
+      ],
+      "explicacao": "Com 'i < n' o valor n nunca entra na soma. Para incluí-lo, a condição precisa ser 'i <= n'."
+    },
+    {
+      "id": "t5-02",
+      "modo": "bug",
+      "titulo": "Média esquisita",
+      "conceito": "precedência",
+      "dificuldade": 1,
+      "objetivo": "Calcular a média de a e b.",
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "media = a + b / 2",
+        "print(media)"
+      ],
+      "linhaBug": 3,
+      "correcao": "media = (a + b) / 2",
+      "parametros": {
+        "A": { "tipo": "int", "min": 2, "max": 10 },
+        "B": { "tipo": "int", "min": 2, "max": 10 }
+      },
+      "dicas": [
+        "Calcule a expressão da linha 3 passo a passo.",
+        "Qual operação é feita primeiro: a soma ou a divisão?",
+        "A divisão acontece antes da soma: só b é dividido por 2."
+      ],
+      "explicacao": "Divisão vem antes da soma. Sem parênteses, só b é dividido por 2. O certo é (a + b) / 2."
+    },
+    {
+      "id": "t5-03",
+      "modo": "bug",
+      "titulo": "Par ou ímpar ao contrário",
+      "conceito": "condição",
+      "dificuldade": 1,
+      "objetivo": "Dizer se n é par ou ímpar.",
+      "codigo": [
+        "n = {N}",
+        "if n % 2 == 1:",
+        "    tipo = \"par\"",
+        "else:",
+        "    tipo = \"ímpar\"",
+        "print(tipo)"
+      ],
+      "linhaBug": 2,
+      "correcao": "if n % 2 == 0:",
+      "parametros": { "N": { "tipo": "int", "min": 1, "max": 50 } },
+      "dicas": [
+        "Teste com o valor de n: qual é o resto de n por 2?",
+        "Quando o resto é 1, o número é par ou ímpar?",
+        "A condição está testando o caso contrário do texto que é guardado."
+      ],
+      "explicacao": "Resto 1 significa ímpar. A condição precisa ser 'n % 2 == 0' para guardar \"par\"."
+    },
+    {
+      "id": "t5-04",
+      "modo": "bug",
+      "titulo": "O maior de três",
+      "conceito": "comparação",
+      "dificuldade": 2,
+      "objetivo": "Encontrar o maior entre a, b e c.",
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "c = {C}",
+        "maior = a",
+        "if b > maior:",
+        "    maior = b",
+        "if c > a:",
+        "    maior = c",
+        "print(maior)"
+      ],
+      "linhaBug": 7,
+      "correcao": "if c > maior:",
+      "parametros": {
+        "A": { "tipo": "int", "min": 1, "max": 20 },
+        "B": { "tipo": "int", "min": 1, "max": 20 },
+        "C": { "tipo": "int", "min": 1, "max": 20 }
+      },
+      "condicao": "B > C > A",
+      "dicas": [
+        "Anote o valor de maior depois da linha 6.",
+        "Na linha 7, c é comparado com quem? E deveria ser comparado com quem?",
+        "c precisa ser maior que o maior encontrado até agora, não só maior que a."
+      ],
+      "explicacao": "Cada novo valor deve ser comparado com 'maior', que guarda o melhor resultado até ali."
+    },
+    {
+      "id": "t5-05",
+      "modo": "bug",
+      "titulo": "O contador que não conta",
+      "conceito": "contador",
+      "dificuldade": 2,
+      "objetivo": "Contar quantos números pares existem de 1 até n.",
+      "codigo": [
+        "n = {N}",
+        "pares = 0",
+        "for k in range(1, n + 1):",
+        "    if k % 2 == 0:",
+        "        pares = 1",
+        "print(pares)"
+      ],
+      "linhaBug": 5,
+      "correcao": "        pares = pares + 1",
+      "parametros": { "N": { "tipo": "int", "min": 4, "max": 9 } },
+      "dicas": [
+        "Rastreie o for e veja quantas vezes a linha 5 é executada.",
+        "Depois da segunda vez, o valor de pares mudou?",
+        "Um contador precisa somar 1 ao valor que já tinha."
+      ],
+      "explicacao": "'pares = 1' só guarda 1. Para contar, é preciso 'pares = pares + 1'."
+    },
+    {
+      "id": "t5-06",
+      "modo": "bug",
+      "titulo": "Fatorial zerado",
+      "conceito": "inicialização",
+      "dificuldade": 2,
+      "objetivo": "Calcular o fatorial de n (1 × 2 × ... × n).",
+      "codigo": [
+        "n = {N}",
+        "fat = 0",
+        "for k in range(1, n + 1):",
+        "    fat = fat * k",
+        "print(fat)"
+      ],
+      "linhaBug": 2,
+      "correcao": "fat = 1",
+      "parametros": { "N": { "tipo": "int", "min": 3, "max": 6 } },
+      "dicas": [
+        "Rastreie o valor de fat a cada volta do for.",
+        "Quanto é 0 multiplicado por qualquer número?",
+        "Um acumulador de multiplicação precisa começar em 1."
+      ],
+      "explicacao": "Somas começam em 0, mas produtos começam em 1. Com fat = 0, o resultado é sempre 0."
+    }
+  ]
+}

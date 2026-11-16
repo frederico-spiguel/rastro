@@ -1,0 +1,125 @@
+{
+  "trilha": 3,
+  "nome": "Repetição",
+  "descricao": "while, for, contadores e acumuladores: o mesmo bloco executado várias vezes.",
+  "objetivos": [
+    "Acompanhar a variável de controle a cada volta do laço",
+    "Identificar quando a condição do laço deixa de ser verdadeira",
+    "Prever o valor final de contadores e acumuladores"
+  ],
+  "desafios": [
+    {
+      "id": "t3-01",
+      "titulo": "Somando com while",
+      "conceito": "while",
+      "dificuldade": 1,
+      "codigo": [
+        "i = 0",
+        "total = 0",
+        "while i < {N}:",
+        "    total = total + i",
+        "    i = i + 1",
+        "print(total)"
+      ],
+      "parametros": {
+        "N": { "tipo": "int", "min": 3, "max": 5 }
+      },
+      "dicas": [
+        "A condição do while é testada antes de cada volta.",
+        "Cada volta executa as duas linhas indentadas, nessa ordem.",
+        "O laço termina quando a condição fica falsa; a condição é testada uma última vez."
+      ],
+      "explicacao": "O while repete o bloco enquanto a condição for verdadeira e testa a condição antes de cada volta."
+    },
+    {
+      "id": "t3-02",
+      "titulo": "Acumulando com for",
+      "conceito": "for com range",
+      "dificuldade": 2,
+      "codigo": [
+        "soma = 0",
+        "for k in range({A}, {B}):",
+        "    soma = soma + k",
+        "print(soma)"
+      ],
+      "parametros": {
+        "A": { "tipo": "int", "min": 1, "max": 5 },
+        "B": { "tipo": "int", "min": 3, "max": 9 }
+      },
+      "condicao": "2 <= B - A <= 4",
+      "dicas": [
+        "range(a, b) gera os números de a até b - 1. O próprio b não entra.",
+        "A cada volta, k recebe o próximo número do range.",
+        "Escreva a lista de valores de k antes de começar a somar."
+      ],
+      "explicacao": "range(a, b) para antes de b. Por isso range(2, 5) gera 2, 3 e 4."
+    },
+    {
+      "id": "t3-03",
+      "titulo": "Contando pares",
+      "conceito": "contador",
+      "dificuldade": 2,
+      "codigo": [
+        "pares = 0",
+        "for n in range(1, {N}):",
+        "    if n % 2 == 0:",
+        "        pares = pares + 1",
+        "print(pares)"
+      ],
+      "parametros": {
+        "N": { "tipo": "int", "min": 4, "max": 7 }
+      },
+      "dicas": [
+        "O if é testado a cada volta do for.",
+        "O contador só aumenta nas voltas em que a condição é verdadeira.",
+        "Liste os valores de n e marque quais deles são pares."
+      ],
+      "explicacao": "Um contador só aumenta quando a condição dentro do laço é verdadeira."
+    },
+    {
+      "id": "t3-04",
+      "titulo": "Contando dígitos",
+      "conceito": "while com divisão",
+      "dificuldade": 3,
+      "codigo": [
+        "n = {N}",
+        "digitos = 0",
+        "while n > 0:",
+        "    n = n // 10",
+        "    digitos = digitos + 1",
+        "print(digitos)"
+      ],
+      "parametros": {
+        "N": { "tipo": "int", "min": 10, "max": 9999 }
+      },
+      "dicas": [
+        "n // 10 remove o último dígito do número.",
+        "Cada volta remove um dígito e soma 1 no contador.",
+        "Quando n vira 0, a condição fica falsa e o laço termina."
+      ],
+      "explicacao": "Dividir por 10 repetidamente é um jeito de contar (ou separar) os dígitos de um número."
+    },
+    {
+      "id": "t3-05",
+      "titulo": "Metades",
+      "conceito": "while e print",
+      "dificuldade": 3,
+      "codigo": [
+        "x = {X}",
+        "while x > 1:",
+        "    print(x, end=\" \")",
+        "    x = x // 2",
+        "print()"
+      ],
+      "parametros": {
+        "X": { "tipo": "int", "min": 10, "max": 40 }
+      },
+      "dicas": [
+        "print(x, end=\" \") escreve o valor e um espaço, sem pular linha.",
+        "A cada volta, x vira a metade (divisão inteira).",
+        "O laço para quando x chega a 1 ou menos; esse último valor não é escrito."
+      ],
+      "explicacao": "end=\" \" troca a quebra de linha do print por um espaço, então os valores ficam na mesma linha."
+    }
+  ]
+}

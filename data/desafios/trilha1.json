@@ -1,0 +1,153 @@
+{
+  "trilha": 1,
+  "nome": "Sequência",
+  "descricao": "Atribuição, expressões, entrada e saída: o computador executa uma linha de cada vez, de cima para baixo.",
+  "objetivos": [
+    "Prever o valor de cada variável depois de uma atribuição",
+    "Calcular expressões respeitando a precedência dos operadores",
+    "Diferenciar /, // e %",
+    "Prever o que é escrito na tela por print"
+  ],
+  "desafios": [
+    {
+      "id": "t1-01",
+      "titulo": "Primeiros valores",
+      "conceito": "atribuição",
+      "dificuldade": 1,
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "c = a + b",
+        "a = c * 2",
+        "print(a, b, c)"
+      ],
+      "parametros": {
+        "A": { "tipo": "int", "min": 1, "max": 9 },
+        "B": { "tipo": "int", "min": 1, "max": 9 }
+      },
+      "dicas": [
+        "Cada linha é executada uma vez, de cima para baixo. Uma variável só muda quando aparece à esquerda do '='.",
+        "Na linha 4, o valor antigo de 'a' é substituído. Use o valor de 'c' calculado na linha 3.",
+        "Primeiro calcule o lado direito (c * 2) e só depois guarde o resultado em 'a'."
+      ],
+      "explicacao": "A atribuição calcula o lado direito e guarda o resultado na variável da esquerda, apagando o valor anterior."
+    },
+    {
+      "id": "t1-02",
+      "titulo": "Troca de valores",
+      "conceito": "atribuição",
+      "dificuldade": 1,
+      "codigo": [
+        "x = {X}",
+        "y = {Y}",
+        "aux = x",
+        "x = y",
+        "y = aux",
+        "print(x, y)"
+      ],
+      "parametros": {
+        "X": { "tipo": "int", "min": 1, "max": 20 },
+        "Y": { "tipo": "int", "min": 1, "max": 20 }
+      },
+      "condicao": "X != Y",
+      "dicas": [
+        "Copiar um valor para outra variável não apaga a variável original.",
+        "Depois da linha 4, 'x' e 'y' têm o mesmo valor. É por isso que 'aux' existe.",
+        "Na linha 5, 'y' recebe o valor guardado em 'aux', que é o valor original de 'x'."
+      ],
+      "explicacao": "Para trocar dois valores é preciso uma variável auxiliar; sem ela, um dos valores se perderia na linha 4."
+    },
+    {
+      "id": "t1-03",
+      "titulo": "Precedência",
+      "conceito": "expressões",
+      "dificuldade": 2,
+      "codigo": [
+        "a = {A}",
+        "b = {B}",
+        "r = a + b * 2",
+        "s = (a + b) * 2",
+        "a = s - r"
+      ],
+      "parametros": {
+        "A": { "tipo": "int", "min": 1, "max": 9 },
+        "B": { "tipo": "int", "min": 2, "max": 9 }
+      },
+      "dicas": [
+        "Assim como na matemática, multiplicação vem antes da soma.",
+        "Na linha 3, calcule b * 2 primeiro e depois some com a.",
+        "Os parênteses da linha 4 mudam a ordem: some a + b primeiro."
+      ],
+      "explicacao": "* , / , // e % são calculados antes de + e -. Parênteses mudam essa ordem."
+    },
+    {
+      "id": "t1-04",
+      "titulo": "Divisão inteira e resto",
+      "conceito": "expressões",
+      "dificuldade": 2,
+      "codigo": [
+        "total = {T}",
+        "grupos = total // {G}",
+        "sobra = total % {G}",
+        "print(grupos, sobra)"
+      ],
+      "parametros": {
+        "T": { "tipo": "int", "min": 10, "max": 50 },
+        "G": { "tipo": "int", "min": 3, "max": 7 }
+      },
+      "condicao": "T % G != 0",
+      "dicas": [
+        "'//' dá quantas vezes um número cabe inteiro no outro; '%' dá o que sobra.",
+        "Pense em distribuir 'total' pessoas em grupos do tamanho indicado.",
+        "Confira: grupos * tamanho + sobra deve ser igual a total."
+      ],
+      "explicacao": "// é a divisão inteira (o quociente sem a parte decimal) e % é o resto dessa divisão."
+    },
+    {
+      "id": "t1-05",
+      "titulo": "Média de duas notas",
+      "conceito": "expressões",
+      "dificuldade": 2,
+      "codigo": [
+        "nota1 = {N1}",
+        "nota2 = {N2}",
+        "soma = nota1 + nota2",
+        "media = soma / 2",
+        "print(media)"
+      ],
+      "parametros": {
+        "N1": { "tipo": "int", "min": 0, "max": 10 },
+        "N2": { "tipo": "int", "min": 0, "max": 10 }
+      },
+      "dicas": [
+        "A divisão com '/' sempre dá um número com ponto decimal (float).",
+        "Mesmo quando a conta é exata, como 8 / 2, o resultado é 4.0 e não 4.",
+        "Calcule soma / 2 e escreva o resultado com '.0' ou '.5'."
+      ],
+      "explicacao": "'/' sempre produz um float. Por isso 8 / 2 dá 4.0, enquanto 8 // 2 dá 4."
+    },
+    {
+      "id": "t1-06",
+      "titulo": "Entrada de dados",
+      "conceito": "entrada e saída",
+      "dificuldade": 3,
+      "codigo": [
+        "n = int(input())",
+        "dobro = n * 2",
+        "proximo = n + 1",
+        "print(\"Dobro:\", dobro)",
+        "print(\"Próximo:\", proximo)"
+      ],
+      "parametros": {
+        "N": { "tipo": "int", "min": 2, "max": 30 }
+      },
+      "entradas": ["{N}"],
+      "dicas": [
+        "input() lê o que o usuário digitou. Neste desafio, o valor digitado aparece ao lado do código.",
+        "input() devolve texto; int() transforma esse texto em número inteiro.",
+        "print com vários valores separa cada um com um espaço."
+      ],
+      "explicacao": "input() sempre devolve texto. Para fazer contas, é preciso converter com int()."
+    }
+  ]
+}
