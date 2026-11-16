@@ -34,6 +34,13 @@ create table if not exists public.eventos (
 );
 create index if not exists eventos_usuario_quando on public.eventos (usuario, quando);
 
+-- Permissões explícitas (o projeto foi criado SEM "Automatically expose new tables").
+-- Só usuários logados acessam as tabelas; o RLS abaixo limita às próprias linhas.
+revoke all on public.perfis, public.progresso, public.eventos from anon, authenticated;
+grant select, insert, update, delete on public.perfis to authenticated;
+grant select, insert, update, delete on public.progresso to authenticated;
+grant select, insert, delete on public.eventos to authenticated;
+
 alter table public.perfis enable row level security;
 alter table public.progresso enable row level security;
 alter table public.eventos enable row level security;
@@ -74,3 +81,6 @@ select
   e.dados
 from public.eventos e
 join public.perfis p on p.id = e.usuario;
+
+-- A visão de análise é só para a dupla (SQL Editor / painel), nunca para o site.
+revoke all on public.analise_eventos from anon, authenticated;
