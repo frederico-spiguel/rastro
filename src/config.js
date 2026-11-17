@@ -15,8 +15,8 @@ export const CONFIG = {
   // O jogo escolhe a forma do pré e do pós-teste pelo código de participante
   // (ímpar: A antes e B depois; par: o contrário).
   links: {
-    formaA: '',
-    formaB: '',
+    formaA: 'https://forms.gle/Z3JmB6yfxHB7LGrSA',
+    formaB: 'https://forms.gle/7u4tDRQrKTkFXP6z7',
     meega: '',
   },
 
