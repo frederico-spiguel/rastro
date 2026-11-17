@@ -11,10 +11,12 @@ export const CONFIG = {
   // true = todas as trilhas abertas desde o início (se o professor preferir no piloto).
   liberarTodasAsTrilhas: false,
 
-  // Formulários aplicados fora do jogo (Google Forms etc.). Vazio = não aparece.
+  // Formulários do Google Forms. Vazio = aparece "link ainda não disponível".
+  // O jogo escolhe a forma do pré e do pós-teste pelo código de participante
+  // (ímpar: A antes e B depois; par: o contrário).
   links: {
-    preTeste: '',
-    posTeste: '',
+    formaA: '',
+    formaB: '',
     meega: '',
   },
 

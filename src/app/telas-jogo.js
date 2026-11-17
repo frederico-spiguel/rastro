@@ -137,11 +137,24 @@ export function telaConfig(raiz) {
   ));
 }
 
+// Contrabalanceamento (pesquisa/codigos.md): código ímpar = forma A no pré e B no pós;
+// par = B no pré e A no pós. Sem número no código: null (a pessoa recebe a ordem da dupla).
+export function formasDoParticipante(codigo) {
+  const m = String(codigo || '').match(/(\d+)\s*$/);
+  if (!m) return null;
+  return Number(m[1]) % 2 === 1 ? { pre: 'A', pos: 'B' } : { pre: 'B', pos: 'A' };
+}
+
 export function telaPesquisa(raiz) {
   const perfil = servico.perfil();
   const link = (url, rotulo) => (url
     ? el('a', { class: 'botao', href: url, target: '_blank', rel: 'noopener' }, rotulo)
     : el('span', { class: 'etiqueta' }, `${rotulo}: link ainda não disponível`));
+  const formas = formasDoParticipante(perfil.codigo_participante);
+  const linkForma = (f) => link(CONFIG.links[`forma${f}`], `Teste (forma ${f})`);
+  const teste = (momento) => (formas
+    ? linkForma(formas[momento])
+    : el('span', {}, linkForma('A'), ' ', linkForma('B'), ' (use a forma indicada pela dupla)'));
   const msg = el('p', { class: 'feedback', role: 'status', hidden: true });
 
   async function baixar(formato) {
@@ -163,9 +176,9 @@ export function telaPesquisa(raiz) {
     el('p', {}, 'Seu código de participante: ', el('strong', {}, perfil.codigo_participante || '(nenhum)'),
       '. Use o mesmo código nos testes e no questionário.'),
     el('ol', { class: 'passos-pesquisa' },
-      el('li', {}, el('strong', {}, 'Antes de jogar: '), link(CONFIG.links.preTeste, 'Pré-teste')),
+      el('li', {}, el('strong', {}, 'Antes de jogar: '), teste('pre')),
       el('li', {}, el('strong', {}, 'Jogue por cerca de 30 minutos. '), el('a', { href: '#/menu' }, 'Ir para o jogo')),
-      el('li', {}, el('strong', {}, 'Depois de jogar: '), link(CONFIG.links.posTeste, 'Pós-teste'), ' ', link(CONFIG.links.meega, 'Questionário MEEGA+'))),
+      el('li', {}, el('strong', {}, 'Depois de jogar: '), teste('pos'), ' ', link(CONFIG.links.meega, 'Questionário MEEGA+'))),
     el('h2', {}, 'Seus dados'),
     el('p', {}, servico.modo === 'supabase'
       ? 'Os registros do jogo são enviados automaticamente. Você pode baixar uma cópia ou apagar tudo.'

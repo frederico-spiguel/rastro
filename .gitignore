@@ -9,6 +9,7 @@ pesquisa/testes.json
 pesquisa/forma-*.md
 pesquisa/gabarito.md
 pesquisa/notas.csv
+pesquisa/forms/
 pesquisa/resultados.md
 pesquisa/dados/
 *.xlsx

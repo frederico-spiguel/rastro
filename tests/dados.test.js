@@ -44,3 +44,11 @@ test('índice lista todos os arquivos de trilha', () => {
   const arquivos = readdirSync(pasta).filter((f) => /^trilha\d+\.json$/.test(f)).sort();
   assert.deepEqual(indice, arquivos);
 });
+
+test('forma do pré/pós-teste segue a paridade do código de participante', async () => {
+  const { formasDoParticipante } = await import('../src/app/telas-jogo.js');
+  assert.deepEqual(formasDoParticipante('RST01'), { pre: 'A', pos: 'B' });
+  assert.deepEqual(formasDoParticipante('rst12 '), { pre: 'B', pos: 'A' });
+  assert.equal(formasDoParticipante(''), null);
+  assert.equal(formasDoParticipante('TESTE'), null);
+});

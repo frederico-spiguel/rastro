@@ -44,7 +44,7 @@ Edite `src/config.js`:
 supabaseUrl: 'https://xxxx.supabase.co',
 supabaseChaveAnon: 'eyJ...',
 contato: 'e-mail da dupla',
-links: { preTeste: '...', posTeste: '...', meega: '...' },   // quando os formulários existirem
+links: { formaA: '...', formaB: '...', meega: '...' },   // ver pesquisa/forms-passo-a-passo.md
 ```
 
 Depois publique:
