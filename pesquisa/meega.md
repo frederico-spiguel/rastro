@@ -1,10 +1,11 @@
 # Questionário MEEGA+ — como aplicar no piloto
 
 O MEEGA+ (Petri, Gresse von Wangenheim et al., GQS/UFSC) é o modelo padronizado para
-avaliar jogos educacionais de computação. **Use o questionário oficial**, baixado do site do
-grupo GQS/UFSC, para manter a validade do instrumento. Este arquivo só resume o que adaptar.
+avaliar jogos educacionais de computação. O formulário do piloto foi montado a partir do
+**questionário oficial do aluno em português (v2018)**, com as adaptações abaixo.
+Link: https://forms.gle/j9B7AbXQozHaYZAF9 (também na tela Pesquisa do jogo).
 
-## Estrutura (para conferir no formulário)
+## Estrutura
 
 - **Perfil:** idade, gênero, frequência com que joga (o questionário oficial já traz).
 - **Usabilidade:** estética, aprendibilidade, operabilidade, acessibilidade.
@@ -14,14 +15,18 @@ grupo GQS/UFSC, para manter a validade do instrumento. Este arquivo só resume o
   O ponto neutro é 0.
 - **Perguntas abertas:** pontos fortes, sugestões e comentários.
 
-## Adaptações
+## Adaptações feitas
 
-1. Trocar o nome genérico do jogo por **Rastro**.
-2. **Interação social:** o Rastro é individual e não tem ranking. Remova esses itens e
-   explique a remoção no relatório (o próprio modelo prevê omitir itens que não se aplicam).
-3. Na aprendizagem percebida, os objetivos do jogo são: prever o valor das variáveis após
-   cada linha; avaliar condições de if/while; acompanhar laços; ler o que o programa imprime.
-4. Colocar o **código de participante** como 1ª pergunta do formulário.
+1. Nome do jogo: **Rastro**. Na descrição, "disciplina" = disciplina de programação.
+2. **Interação social:** os 3 itens foram retirados, porque o Rastro é individual e não tem
+   ranking. Explicar a remoção no relatório (o modelo prevê omitir itens que não se aplicam).
+3. Aprendizagem percebida: a afirmação "O jogo contribuiu para..." foi repetida para os
+   5 objetivos do Rastro: aplicar o teste de mesa (valor das variáveis após cada linha);
+   avaliar condições de if/elif/while; acompanhar laços; prever o que o programa imprime;
+   localizar erros simulando a execução.
+4. **Código de participante** como 1ª pergunta; opção "Prefiro não informar" em Sexo.
+5. Resultado: 9 itens de usabilidade e 24 de experiência do jogador, todos obrigatórios,
+   mais demografia (opcional) e 3 perguntas abertas.
 
 ## Análise prevista
 

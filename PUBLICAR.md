@@ -1,5 +1,9 @@
 # Publicar o Rastro: o que só vocês podem fazer
 
+> **Situação em 16/11/2026: tudo concluído.** Site no ar em
+> https://frederico-spiguel.github.io/rastro/, Supabase ligado e testado, formulários criados
+> (ver `pesquisa/forms-passo-a-passo.md`). Este guia fica como registro e para refazer, se preciso.
+
 O código já está pronto e salvo num repositório git local (pasta do projeto, branch `main`).
 Faltam só os passos que dependem das contas de vocês. Tempo estimado: 20 a 30 minutos.
 

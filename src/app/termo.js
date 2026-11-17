@@ -1,4 +1,4 @@
-// Termo de consentimento (RASCUNHO: revisar com o professor antes do piloto).
+// Termo de consentimento (revisado e aprovado pelo professor em 16/11/2026).
 import { CONFIG } from '../config.js';
 import { el } from './dom.js';
 
@@ -10,7 +10,7 @@ export function textoDoTermo(modo) {
     el('h2', {}, 'Termo de consentimento livre e esclarecido'),
     el('p', {}, 'Você está sendo convidado(a) a participar de um estudo da disciplina de tecnologia educacional, conduzido por Izadora Queiros e Frederico Spiguel, que avalia o Rastro, um jogo para treinar teste de mesa em programação.'),
     el('h3', {}, 'O que você vai fazer'),
-    el('p', {}, 'Responder a um teste curto antes e depois de jogar, jogar por cerca de 30 minutos e responder a um questionário sobre a experiência. Tempo total aproximado: 55 minutos.'),
+    el('p', {}, 'Responder a um teste curto (formulário online) antes e depois de jogar, jogar por cerca de 30 minutos e responder a um questionário sobre a experiência. Tempo total aproximado: 1 hora.'),
     el('h3', {}, 'Que dados são coletados'),
     el('p', {}, `Coletamos ${coleta}: tentativas, erros, tempo e dicas usadas em cada desafio. Não coletamos nome, CPF nem outros dados pessoais.`),
     el('h3', {}, 'Como os dados são usados'),

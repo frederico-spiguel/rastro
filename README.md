@@ -3,6 +3,19 @@
 Jogo sério de navegador para treinar **teste de mesa** (rastrear, linha a linha, como as
 variáveis mudam) em Python simplificado. Trabalho de Izadora Queiros e Frederico Spiguel.
 
+- Jogo: https://frederico-spiguel.github.io/rastro/ (GitHub Pages + Supabase para login e dados)
+- Piloto: 30/11 a 06/12/2026. Entrega e apresentação: 11/12/2026.
+- Pesquisa: pré-teste, 30 min de jogo, pós-teste (formas A/B contrabalanceadas, no Google
+  Forms) e MEEGA+. Roteiro em `pesquisa/protocolo.md`.
+
+## Ferramentas da pesquisa
+
+```
+python tools/corrigir_forms.py --a forma-A.csv --b forma-B.csv   # notas do pré/pós-teste
+python tools/meega.py converter respostas-meega.csv              # MEEGA+ para a análise
+python tools/analisar_piloto.py --notas pesquisa/notas.csv --meega pesquisa/dados/meega.csv
+```
+
 ## Estrutura
 
 ```
