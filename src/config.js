@@ -17,7 +17,7 @@ export const CONFIG = {
   links: {
     formaA: 'https://forms.gle/Z3JmB6yfxHB7LGrSA',
     formaB: 'https://forms.gle/7u4tDRQrKTkFXP6z7',
-    meega: '',
+    meega: 'https://forms.gle/j9B7AbXQozHaYZAF9',
   },
 
   contato: 'frederico.spiguel@gmail.com',

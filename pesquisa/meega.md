@@ -28,3 +28,15 @@ grupo GQS/UFSC, para manter a validade do instrumento. Este arquivo só resume o
 Mediana por fator e porcentagem de respostas positivas (+1 ou +2). Critério proposto:
 experiência boa quando as medianas ficam acima de 0. O `tools/analisar_piloto.py` faz
 essa conta se o CSV tiver uma coluna por item, nomeada `fator:item` (ex.: `diversao:1`).
+
+## Situação (16/11/2026)
+
+Formulário criado a partir do questionário oficial do aluno em português (v2018), baixado em
+https://www.ufsm.br/grupos/gptec/paginas/portfolio/meega (GpTEc/UFSM, parceiro do GQS/UFSC).
+Itens, fatores e adaptações estão em `tools/meega.py`. Link já em `src/config.js`.
+
+Depois do piloto: Respostas > Planilhas > Arquivo > Fazer download > CSV, salvar em
+`pesquisa/dados/meega-forms.csv` e rodar:
+
+    python tools/meega.py converter pesquisa/dados/meega-forms.csv
+    python tools/analisar_piloto.py --notas pesquisa/notas.csv --meega pesquisa/dados/meega.csv

@@ -95,4 +95,4 @@ chegou. Depois apague a resposta (Respostas > ⋮ > Excluir todas as respostas).
 As formas A e B já foram criadas por Apps Script (projeto "Projeto sem título" no
 script.google.com da conta UNIRIO), com o código das questões em texto (recuo preservado),
 e liberadas para "qualquer pessoa com o link". Os links já estão em `src/config.js`.
-Falta só o MEEGA+ (seção 3).
+O MEEGA+ também já foi criado (ver `pesquisa/meega.md`).
